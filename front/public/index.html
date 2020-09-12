@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#FFE600" />
+  <meta name="description"
+    content="Visualizador de productos a partir del API de Mercado Libre con barra de búsqueda y vista detallada" />
+  <meta name="author" content="Gabriel Pinto">
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/logo144.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#FFE600">
+  <meta name="apple-mobile-web-app-title" content="Weather PWA">
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>Mercado Libre</title>
+</head>
+
+<body>
+  <noscript>Debes habilitar JavaScript para ejecutar la app</noscript>
+  <div id="root"></div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('service-worker.js').then(function (registration) {
+          console.log('Worker registration successful', registration.scope);
+        }, function (err) {
+          console.log('Worker registration failed', err);
+        }).catch(function (err) {
+          console.log(err);
+        });
+      });
+    } else {
+      console.log('Service Worker is not supported by browser.');
+    }
+  </script>
+</body>
+
+</html>

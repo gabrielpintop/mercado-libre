@@ -1,0 +1,20 @@
+{
+  "short_name": "Mercado Libre",
+  "name": "Mercado Libre",
+  "icons": [{
+      "src": "images/logo144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "maskable"
+    },
+    {
+      "src": "images/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#FFE600",
+  "background_color": "#ffffff"
+}
