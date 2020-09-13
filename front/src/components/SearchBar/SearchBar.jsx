@@ -3,7 +3,7 @@ import './SearchBar.scss';
 import mercadoLibreLogo from '../../assets/logos/Logo_ML@2x.png';
 import searchIcon from '../../assets/icons/ic_Search@2x.png';
 
-const SearchBar = (props) => {
+const SearchBar = ({ loading, loadProducts }) => {
     const [searchedText, setSearchedText] = useState('');
     const defineText = (event) => {
         setSearchedText(event.target.value);
@@ -18,8 +18,8 @@ const SearchBar = (props) => {
                     </div>
                     <div className="col-11 pl-0 pr-0">
                         <div id="searchBar">
-                            <input id="searchBarInput" name="searchedText" type="text" placeholder="Nunca dejes de buscar" value={searchedText} onChange={defineText} />
-                            <button style={{ backgroundImage: `url(${searchIcon})` }}></button>
+                            <input id="searchBarInput" disabled={loading} name="searchedText" type="text" placeholder="Nunca dejes de buscar" value={searchedText} onChange={defineText} />
+                            <button disabled={loading} style={{ backgroundImage: `url(${searchIcon})` }} onClick={() => loadProducts(searchedText)}></button>
                         </div>
                     </div>
                 </div>
