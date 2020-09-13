@@ -1,39 +1,48 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import React, { useState, useCallback } from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect, useHistory, useLocation } from "react-router-dom";
 import Products from '../Products/Products';
 import ProductDetails from '../ProductDetails/ProductDetails';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
-import Loading from '../../components/Loading/Loading';
 
-const ProductsVisualizer = () => {
+const ProductsVisualizer = (props) => {
+    const history = useHistory();
+    const [categories, setCategories] = useState(['Electrónica, Audio y Video', 'iPod', 'Reproductores', 'iPod touch', '32 GB']);
     const [loading, setLoading] = useState(false);
-    const categories = ['Electrónica, Audio y Video', 'iPod', 'Reproductores', 'iPod touch', '32 GB'];
-
-    const loadProducts = (searched) => {
-        setLoading(true);
+    const [searched, setSearched] = useState(new URLSearchParams(useLocation().search).get('search') || '');
+    const loadProducts = (search) => {
+        if (search && search.length > 1) {
+            history.push(`/?search=${search}`);
+            setSearched(search);
+        }
     };
+
+    const handleChanges = useCallback((currentCategories, currentLoading) => {
+        setCategories(currentCategories);
+        setLoading(currentLoading);
+    }, []);
 
     return (
         <>
-            <SearchBar loadProducts={loadProducts} loading={loading} />
+            <SearchBar loadProducts={loadProducts} loading={loading} searched={searched} />
             <Breadcrumb categories={categories} loadProducts={loadProducts} loading={loading} />
-            {!loading && <div className="row h-100 margin-horizontal">
+            <div className="row h-100 margin-horizontal">
                 <div className="col-lg-10 mx-auto row flex-align-center pl-0 pr-0" >
-                    <Router>
-                        <Switch>
-                            <Route exact path="/">
-                                <Products></Products>
-                            </Route>
-                            <Route exact path="/:id">
-                                <ProductDetails />
-                            </Route>
-                            <Redirect to="" />
-                        </Switch>
-                    </Router>
+                    <div className="col-12 pl-0 pr-0">
+                        <Router>
+                            <Switch>
+                                <Route exact path="/">
+                                    <Products handleChanges={handleChanges} searched={searched}></Products>
+                                </Route>
+                                <Route exact path="/:id">
+                                    <ProductDetails />
+                                </Route>
+                                <Redirect to="" />
+                            </Switch>
+                        </Router>
+                    </div>
                 </div>
-            </div>}
-            {loading && <Loading />}
+            </div>
         </>
     );
 }

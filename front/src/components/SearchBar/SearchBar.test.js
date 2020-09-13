@@ -7,7 +7,7 @@ describe('component - SearchBar', () => {
     const loadProducts = jest.fn();
     let searchBar;
     beforeAll(() => {
-        searchBar = shallow(<SearchBar loading={false} loadProducts={loadProducts} />);
+        searchBar = shallow(<SearchBar loading={false} loadProducts={loadProducts} searched={''} />);
     });
 
     test('renders correctly', () => {
