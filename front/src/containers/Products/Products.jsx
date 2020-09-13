@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Loading from '../../components/Loading/Loading';
 
 const Products = ({ searched, handleChanges }) => {
-    const [products, setProducts] = [];
+    // const [products, setProducts] = [];
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
