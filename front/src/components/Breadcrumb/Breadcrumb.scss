@@ -5,15 +5,18 @@
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
+    line-height: 0px;
 
     @media(max-width: 575.98px) {
         padding: 16px 0px;
     }
 
     li {
-        display: inline;
         font-size: 14px;
         color: var(--color-info);
+        display: inline-block;
+        margin-bottom: 3px;
+        line-height: 14px;
 
         button {
             display: inline-block;
@@ -22,6 +25,7 @@
             transition: color 0.1s ease;
             outline: none;
             border: 0px;
+            line-height: 14px;
             color: var(--color-info);
         }
 
@@ -37,9 +41,11 @@
     }
 
     li+li:before {
-        padding: 8px;
+        margin: 0px;
+        padding: 0px 8px;
         content: '\203A';
         font-size: 20px;
+        line-height: 0px;
     }
 }
 
@@ -47,5 +53,13 @@
     #breadcrumbNav {
         margin-top: 0px;
         margin-bottom: 0px;
+    }
+
+    #breadcrumb {
+        li {
+            button {
+                line-height: initial;
+            }
+        }
     }
 }

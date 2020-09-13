@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  // font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
   overflow-x: hidden;
   background-color: var(--color-background);
 }
@@ -34,13 +34,6 @@ body {
   margin-right: 4rem;
 }
 
-@media(max-width: 575.98px) {
-  .margin-horizontal {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-}
-
 button {
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -57,14 +50,43 @@ button:focus {
   margin-bottom: 16px;
 }
 
-.margin-top-medium {
+.mb-medium {
+  margin-bottom: 32px;
+}
+
+.pt-small {
+  padding-top: 16px;
+}
+
+.pb-small {
+  padding-bottom: 16px;
+}
+
+.mt-medium {
   margin-top: 32px;
 }
 
-.margin-top-large {
+.mt-large {
   margin-top: 64px;
 }
 
 .text-center {
   text-align: center;
+}
+
+.main-content {
+  @extend .flex-align-center;
+  background-color: white;
+  padding: 0 16px;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+@media(max-width: 575.98px) {
+
+  .margin-horizontal,
+  .main-content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
