@@ -9,16 +9,18 @@ jest.mock('react-router-dom', () => ({
 
 describe('container - ProductDetails', () => {
 
+    const handleChanges = jest.fn();
+
     let productDetails;
     beforeAll(() => {
-        productDetails = mount(<ProductDetails />);
+        productDetails = mount(<ProductDetails handleChanges={handleChanges} />);
     });
 
     test('renders correctly', () => {
         expect(productDetails.length).toEqual(1);
     });
 
-    test('searched id text', () => {
-        expect(productDetails.find('h1').text()).toMatch(/1234/);
+    test('loading present', () => {
+        expect(productDetails.exists('Loading')).toBeTruthy();
     });
 });

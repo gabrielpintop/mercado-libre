@@ -17,7 +17,6 @@ const Products = ({ searched, handleChanges }) => {
                 handleChanges(data.categories, false);
                 setLoading(false);
             }).catch(err => {
-                window.alert(err);
                 handleChanges([], false);
                 setLoading(false);
             });
