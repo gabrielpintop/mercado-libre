@@ -1,18 +1,21 @@
 import React from 'react';
-import SearchBar from './components/SearchBar/SearchBar';
-import Breadcrumb from './components/Breadcrumb/Breadcrumb';
-
-const categories = ['Electrónica, Audio y Video', 'iPod', 'Reproductores', 'iPod touch', '32 GB'];
-const mockedLoadProducts = (result) => {
-  console.log(result);
-};
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import Products from './containers/Products/Products';
+import ProductDetails from './containers/ProductDetails/ProductDetails';
 
 const App = () => {
   return (
-    <>
-      <SearchBar loadProducts={mockedLoadProducts}></SearchBar>
-      <Breadcrumb loadProducts={mockedLoadProducts} categories={categories} />
-    </>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Products />
+        </Route>
+        <Route exact path="/:id">
+          <ProductDetails />
+        </Route>
+        <Redirect to="" />
+      </Switch>
+    </Router>
   );
 }
 
