@@ -65,4 +65,31 @@ const getProducts = (q) => {
     });
 };
 
-module.exports = { getProducts };
+const getProductById = (id) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({
+                "author": {
+                    "name": String,
+                    "lastname": String,
+                },
+                "item": {
+                    "id": 'MLA863294524',
+                    "title": 'Microsoft Xbox One S 1tb Two-controller Bundle Blanco',
+                    "price": {
+                        "currency": 'ARS',
+                        "amount": 55200,
+                        "decimals": 0
+                    },
+                    "picture": 'http://http2.mlstatic.com/D_949085-MLA40175707456_122019-F.jpg',
+                    "condition": 'new',
+                    "free_shipping": Boolean,
+                    "sold_quantity": Number,
+                    "description": String
+                }
+            });
+        }, 200);
+    });
+};
+
+module.exports = { getProducts, getProductById };

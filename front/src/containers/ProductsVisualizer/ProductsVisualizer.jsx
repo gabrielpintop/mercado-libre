@@ -12,7 +12,7 @@ const ProductsVisualizer = (props) => {
     const [loading, setLoading] = useState(false);
     const [searched, setSearched] = useState(new URLSearchParams(useLocation().search).get('search') || '');
     const loadProducts = (search) => {
-        if (search && search.length > 1) {
+        if (search && search.length > 1 && searched !== search) {
             history.push(`/items?search=${search}`);
             setSearched(search);
         }
@@ -29,6 +29,9 @@ const ProductsVisualizer = (props) => {
                 setSearched(new URLSearchParams(listen.search).get('search'));
             } else {
                 setSearched('');
+                if (listen.pathname === '/') {
+                    setCategories([]);
+                }
             }
         });
     }, [history]);
@@ -45,7 +48,7 @@ const ProductsVisualizer = (props) => {
                                 <Products handleChanges={handleChanges} searched={searched}></Products>
                             </Route>
                             <Route exact path="/items/:id">
-                                <ProductDetails />
+                                <ProductDetails handleChanges={handleChanges} />
                             </Route>
                             <Route exact path="/">
                                 <ProductsMessage message={'notSearched'} />
