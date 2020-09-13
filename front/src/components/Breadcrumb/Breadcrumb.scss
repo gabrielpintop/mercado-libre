@@ -25,7 +25,7 @@
             color: var(--color-info);
         }
 
-        button:hover {
+        button:hover:enabled {
             color: darken(#999999, 12%);
         }
     }

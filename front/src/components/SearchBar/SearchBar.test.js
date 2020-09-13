@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import SearchBar from './SearchBar';
 
 describe('component - SearchBar', () => {
@@ -7,7 +7,7 @@ describe('component - SearchBar', () => {
     const loadProducts = jest.fn();
     let searchBar;
     beforeAll(() => {
-        searchBar = mount(<SearchBar loading={false} loadProducts={loadProducts} />);
+        searchBar = shallow(<SearchBar loading={false} loadProducts={loadProducts} searched={''} />);
     });
 
     test('renders correctly', () => {
@@ -37,6 +37,12 @@ describe('component - SearchBar', () => {
 
     test('button clicked', () => {
         searchBar.find('#searchBar button').simulate('click');
+        expect(loadProducts).toHaveBeenCalledTimes(1);
+        expect(loadProducts).toHaveBeenCalledWith(searchedText);
+    });
+
+    test('enter key pressed', () => {
+        searchBar.find('#searchBar button').simulate('keypress', { key: 'Enter' });
         expect(loadProducts).toHaveBeenCalledTimes(1);
         expect(loadProducts).toHaveBeenCalledWith(searchedText);
     });

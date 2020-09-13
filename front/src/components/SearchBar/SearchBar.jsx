@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SearchBar.scss';
 import mercadoLibreLogo from '../../assets/logos/Logo_ML@2x.png';
 import searchIcon from '../../assets/icons/ic_Search@2x.png';
 
-const SearchBar = ({ loading, loadProducts }) => {
-    const [searchedText, setSearchedText] = useState('');
+const SearchBar = ({ loading, loadProducts, searched }) => {
+    const [searchedText, setSearchedText] = useState(searched);
     const defineText = (event) => {
         setSearchedText(event.target.value);
     };
+    const handleKeyEnterPress = (event) => {
+        if (event.key === 'Enter') {
+            loadProducts(searchedText)
+        }
+    };
+
+    useEffect(() => {
+        setSearchedText(searched);
+    }, [searched]);
 
     return (
         <header className="header">
@@ -18,7 +27,7 @@ const SearchBar = ({ loading, loadProducts }) => {
                     </div>
                     <div className="col-lg-11 col-md-10 col-9 pl-0 pr-0">
                         <div id="searchBar">
-                            <input id="searchBarInput" disabled={loading} name="searchedText" type="text" placeholder="Nunca dejes de buscar" value={searchedText} onChange={defineText} />
+                            <input id="searchBarInput" disabled={loading} onKeyPress={handleKeyEnterPress} name="searchedText" type="text" placeholder="Nunca dejes de buscar" value={searchedText} onChange={defineText} />
                             <button disabled={loading} style={{ backgroundImage: `url(${searchIcon})` }} onClick={() => loadProducts(searchedText)}></button>
                         </div>
                     </div>

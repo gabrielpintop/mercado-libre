@@ -35,6 +35,11 @@
         opacity: 1;
     }
 
+    input:disabled {
+        background-color: var(--color-background);
+        opacity: 1;
+    }
+
     button {
         width: 5%;
         height: 100%;
@@ -54,7 +59,7 @@
         }
     }
 
-    button:hover {
+    button:hover:enabled {
         background-color: darken(#EEEEEE, 10%);
         border-color: darken(#EEEEEE, 10%);
     }

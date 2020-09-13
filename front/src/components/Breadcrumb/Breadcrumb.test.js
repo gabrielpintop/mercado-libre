@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Breadcrumb from './Breadcrumb';
 
 describe('component - Breadcrumb', () => {
@@ -7,7 +7,7 @@ describe('component - Breadcrumb', () => {
     const categories = ['Electrónica, Audio y Video', 'iPod', 'Reproductores', 'iPod touch', '32 GB'];
     let breadcrumb;
     beforeAll(() => {
-        breadcrumb = mount(<Breadcrumb loadProducts={loadProducts} categories={categories} />);
+        breadcrumb = shallow(<Breadcrumb loadProducts={loadProducts} categories={categories} />);
     });
 
     test('renders correctly', () => {
@@ -34,5 +34,11 @@ describe('component - Breadcrumb', () => {
         breadcrumb.find('li button').at(0).simulate('click');
         expect(loadProducts).toHaveBeenCalledTimes(1);
         expect(loadProducts).toHaveBeenCalledWith(categories[0]);
+    });
+
+    test('loading prop effect', () => {
+        expect(breadcrumb.find('li button').at(0).props().disabled).toBeFalsy();
+        breadcrumb.setProps({ loading: true });
+        expect(breadcrumb.find('li button').at(0).props().disabled).toBeTruthy();
     });
 });
