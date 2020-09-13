@@ -7,7 +7,7 @@ import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 
 const ProductsVisualizer = (props) => {
     const history = useHistory();
-    const [categories, setCategories] = useState(['Electrónica, Audio y Video', 'iPod', 'Reproductores', 'iPod touch', '32 GB']);
+    const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(false);
     const [searched, setSearched] = useState(new URLSearchParams(useLocation().search).get('search') || '');
     const loadProducts = (search) => {
@@ -34,10 +34,10 @@ const ProductsVisualizer = (props) => {
                                 <Route exact path="/">
                                     <Products handleChanges={handleChanges} searched={searched}></Products>
                                 </Route>
-                                <Route exact path="/:id">
+                                <Route exact path="/products/:id">
                                     <ProductDetails />
                                 </Route>
-                                <Redirect to="" />
+                                <Redirect to="/" />
                             </Switch>
                         </Router>
                     </div>

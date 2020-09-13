@@ -2,16 +2,11 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Products from './Products.jsx';
 
-jest.mock('react-router-dom', () => ({
-    ...jest.requireActual('react-router-dom'), // use actual for all non-hook parts
-    useLocation: () => ({ pathname: '/', search: '?search=1234', hash: '' }),
-}));
-
 describe('container - Products', () => {
 
     let productDetails;
     beforeAll(() => {
-        productDetails = mount(<Products />);
+        productDetails = mount(<Products searched={''} />);
     });
 
     test('renders correctly', () => {
@@ -19,6 +14,6 @@ describe('container - Products', () => {
     });
 
     test('searched text', () => {
-        expect(productDetails.find('h1').text()).toMatch(/1234/);
+        expect(productDetails.find('h2').text()).toMatch(/Buscado:/);
     });
 });
