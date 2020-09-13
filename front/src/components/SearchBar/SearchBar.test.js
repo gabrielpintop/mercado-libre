@@ -41,6 +41,12 @@ describe('component - SearchBar', () => {
         expect(loadProducts).toHaveBeenCalledWith(searchedText);
     });
 
+    test('enter key pressed', () => {
+        searchBar.find('#searchBar button').simulate('keypress', { key: 'Enter' });
+        expect(loadProducts).toHaveBeenCalledTimes(1);
+        expect(loadProducts).toHaveBeenCalledWith(searchedText);
+    });
+
     test('loading prop effect', () => {
         expect(searchBar.find('#searchBarInput').props().disabled).toBeFalsy();
         expect(searchBar.find('#searchBar button').props().disabled).toBeFalsy();

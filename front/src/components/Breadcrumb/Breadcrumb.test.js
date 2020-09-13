@@ -35,4 +35,10 @@ describe('component - Breadcrumb', () => {
         expect(loadProducts).toHaveBeenCalledTimes(1);
         expect(loadProducts).toHaveBeenCalledWith(categories[0]);
     });
+
+    test('loading prop effect', () => {
+        expect(breadcrumb.find('li button').at(0).props().disabled).toBeFalsy();
+        breadcrumb.setProps({ loading: true });
+        expect(breadcrumb.find('li button').at(0).props().disabled).toBeTruthy();
+    });
 });

@@ -8,6 +8,11 @@ const SearchBar = ({ loading, loadProducts }) => {
     const defineText = (event) => {
         setSearchedText(event.target.value);
     };
+    const handleKeyEnterPress = (event) => {
+        if (event.key == 'Enter') {
+            loadProducts(searchedText)
+        }
+    };
 
     return (
         <header className="header">
@@ -18,7 +23,7 @@ const SearchBar = ({ loading, loadProducts }) => {
                     </div>
                     <div className="col-lg-11 col-md-10 col-9 pl-0 pr-0">
                         <div id="searchBar">
-                            <input id="searchBarInput" disabled={loading} name="searchedText" type="text" placeholder="Nunca dejes de buscar" value={searchedText} onChange={defineText} />
+                            <input id="searchBarInput" disabled={loading} onKeyPress={handleKeyEnterPress} name="searchedText" type="text" placeholder="Nunca dejes de buscar" value={searchedText} onChange={defineText} />
                             <button disabled={loading} style={{ backgroundImage: `url(${searchIcon})` }} onClick={() => loadProducts(searchedText)}></button>
                         </div>
                     </div>

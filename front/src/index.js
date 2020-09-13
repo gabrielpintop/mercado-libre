@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './scss/index.scss';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import ProductsVisualizer from './containers/ProductsVisualizer/ProductsVisualizer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ProductsVisualizer />
   </React.StrictMode>,
   document.getElementById('root')
 );
