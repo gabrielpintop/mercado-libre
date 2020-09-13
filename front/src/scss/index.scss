@@ -50,11 +50,23 @@ button:focus {
   margin-bottom: 16px;
 }
 
-.margin-top-medium {
+.mb-medium {
+  margin-bottom: 32px;
+}
+
+.pt-small {
+  padding-top: 16px;
+}
+
+.pb-small {
+  padding-bottom: 16px;
+}
+
+.mt-medium {
   margin-top: 32px;
 }
 
-.margin-top-large {
+.mt-large {
   margin-top: 64px;
 }
 
@@ -65,7 +77,7 @@ button:focus {
 .main-content {
   @extend .flex-align-center;
   background-color: white;
-  padding: 16px;
+  padding: 0 16px;
   border-radius: 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
 }

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Switch, Route, Redirect, useHistory, useLocation } from "react-router-dom";
 import Products from '../Products/Products';
 import ProductDetails from '../ProductDetails/ProductDetails';
@@ -22,6 +22,16 @@ const ProductsVisualizer = (props) => {
         setCategories(currentCategories);
         setLoading(currentLoading);
     }, []);
+
+    useEffect(() => {
+        history.listen((listen, action) => {
+            if (listen.search) {
+                setSearched(new URLSearchParams(listen.search).get('search'));
+            } else {
+                setSearched('');
+            }
+        });
+    }, [history]);
 
     return (
         <>

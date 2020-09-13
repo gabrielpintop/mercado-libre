@@ -1,17 +1,13 @@
 const axios = require('axios').default;
 const api = process.env.REACT_APP_SERVER_URL;
 
-const getRequest = (endpoint, resolve, reject, token, callback) => {
-    handleRequestResponse(axios.get(api + endpoint, getHeaders(token)), resolve, reject, callback);
+const getRequest = (endpoint, resolve, reject) => {
+    handleRequestResponse(axios.get(api + endpoint, {}), resolve, reject);
 };
 
-const handleRequestResponse = (request, resolve, reject, callback) => {
+const handleRequestResponse = (request, resolve, reject) => {
     request.then(res => {
-        if (callback) {
-            callback(res.data.data, resolve);
-        } else {
-            resolve(res.data.data);
-        }
+        resolve(res.data.data);
     }).catch(err => {
         handleError(err, reject);
     });

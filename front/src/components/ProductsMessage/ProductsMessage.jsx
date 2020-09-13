@@ -16,10 +16,12 @@ const ProductsMessage = ({ message }) => {
 
         }
     };
-    return <div id="productsMessage" className="main-content row no-gutters margin-horizontal py-5">
+    return <div id="productsMessage" className="main-content row no-gutters py-5 mb-small mt-small">
         <div className="col-md-1"></div>
         <div className="col-md-2 text-center">
-            <img src={searchErrorSvg} alt="Search error svg" />
+            <div>
+                <img src={searchErrorSvg} alt="Search error svg" />
+            </div>
         </div>
         <div className="col-md-9 pt-2">
             <h2>{messsages[message]?.title}</h2>
