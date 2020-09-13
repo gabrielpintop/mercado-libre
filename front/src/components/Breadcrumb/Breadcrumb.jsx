@@ -7,7 +7,7 @@ const Breadcrumb = ({ categories, loadProducts }) => {
                 <div className="col-lg-10 mx-auto row flex-align-center pl-0 pr-0" >
                     <div className="col-12 pl-0">
                         <ul id="breadcrumb">
-                            {categories?.map((category, index) => <li key={'CT' + index}><a onClick={() => loadProducts(category)}>{category}</a></li>)}
+                            {categories?.map((category, index) => <li key={'CT' + index}><button onClick={() => loadProducts(category)}>{category}</button></li>)}
                         </ul>
                     </div>
                 </div>

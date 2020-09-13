@@ -15,18 +15,23 @@
         font-size: 14px;
         color: var(--color-info);
 
-        a {
-            cursor: pointer;
+        button {
+            display: inline-block;
+            margin: 0px;
+            padding: 0px;
             transition: color 0.1s ease;
+            outline: none;
+            border: 0px;
+            color: var(--color-info);
         }
 
-        a:hover {
+        button:hover {
             color: darken(#999999, 12%);
         }
     }
 
     li:last-child {
-        a {
+        button {
             font-weight: bold;
         }
     }

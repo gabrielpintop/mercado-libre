@@ -23,7 +23,7 @@ describe('component - Breadcrumb', () => {
     });
 
     test('breadcrumb elements values', () => {
-        const breadcrumbElements = breadcrumb.find('li a');
+        const breadcrumbElements = breadcrumb.find('li button');
         expect(breadcrumbElements.length).toEqual(categories.length);
         for (let index = 0; index < breadcrumbElements.length; index++) {
             expect(breadcrumbElements.at(index).text()).toEqual(categories[index]);
@@ -31,7 +31,7 @@ describe('component - Breadcrumb', () => {
     });
 
     test('breadcrumb element clicked', () => {
-        breadcrumb.find('li a').at(0).simulate('click');
+        breadcrumb.find('li button').at(0).simulate('click');
         expect(loadProducts).toHaveBeenCalledTimes(1);
         expect(loadProducts).toHaveBeenCalledWith(categories[0]);
     });
