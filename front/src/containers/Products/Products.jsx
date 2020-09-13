@@ -9,17 +9,22 @@ const Products = ({ searched, handleChanges }) => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        handleChanges([], true);
-        setLoading(true);
-        getProducts(searched).then(data => {
-            setProducts(data.items);
-            handleChanges(data.categories, false);
-            setLoading(false);
-        }).catch(err => {
-            window.alert(err);
+        if (searched) {
+            handleChanges([], true);
+            setLoading(true);
+            getProducts(searched).then(data => {
+                setProducts(data.items);
+                handleChanges(data.categories, false);
+                setLoading(false);
+            }).catch(err => {
+                window.alert(err);
+                handleChanges([], false);
+                setLoading(false);
+            });
+        } else {
             handleChanges([], false);
-            setLoading(false);
-        });
+            setProducts([]);
+        }
     }, [searched, handleChanges]);
 
     const renderProducts = () => {

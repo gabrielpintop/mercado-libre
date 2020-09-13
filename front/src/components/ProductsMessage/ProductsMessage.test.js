@@ -31,12 +31,4 @@ describe('component - ProductsMessage', () => {
         productsMessage.setProps({ message: 'notAValidMessageForTesting' });
         expect(productsMessage.find('h2').text()).toEqual('');
     });
-
-    // test('loading prop effect', () => {
-    //     expect(productsMessage.find('#productsMessageInput').props().disabled).toBeFalsy();
-    //     expect(productsMessage.find('#productsMessage button').props().disabled).toBeFalsy();
-    //     productsMessage.setProps({ loading: true });
-    //     expect(productsMessage.find('#productsMessageInput').props().disabled).toBeTruthy();
-    //     expect(productsMessage.find('#productsMessage button').props().disabled).toBeTruthy();
-    // });
 });

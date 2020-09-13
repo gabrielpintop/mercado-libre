@@ -18,7 +18,7 @@ const getProducts = (q) => {
                             "amount": 55200,
                             "decimals": 0
                         },
-                        "picture": 'http://http2.mlstatic.com/D_949085-MLA40175707456_122019-F.webp',
+                        "picture": 'http://http2.mlstatic.com/D_949085-MLA40175707456_122019-F.jpg',
                         "condition": 'new',
                         "free_shipping": Boolean
                     },
@@ -30,9 +30,10 @@ const getProducts = (q) => {
                             "amount": 55200,
                             "decimals": 0
                         },
-                        "picture": 'http://http2.mlstatic.com/D_949085-MLA40175707456_122019-F.webp',
+                        "picture": 'http://http2.mlstatic.com/D_949085-MLA40175707456_122019-F.jpg',
                         "condition": 'new',
-                        "free_shipping": Boolean
+                        "free_shipping": Boolean,
+                        "city": "Prueba"
                     },
                     {
                         "id": 'MLA863294523',
@@ -42,7 +43,7 @@ const getProducts = (q) => {
                             "amount": 55200,
                             "decimals": 0
                         },
-                        "picture": 'http://http2.mlstatic.com/D_949085-MLA40175707456_122019-F.webp',
+                        "picture": 'http://http2.mlstatic.com/D_949085-MLA40175707456_122019-F.jpg',
                         "condition": 'new',
                         "free_shipping": Boolean
                     },
@@ -54,7 +55,7 @@ const getProducts = (q) => {
                             "amount": 55200,
                             "decimals": 0
                         },
-                        "picture": 'http://http2.mlstatic.com/D_949085-MLA40175707456_122019-F.webp',
+                        "picture": 'http://http2.mlstatic.com/D_949085-MLA40175707456_122019-F.jpg',
                         "condition": 'new',
                         "free_shipping": Boolean
                     }]

@@ -54,4 +54,12 @@
         margin-top: 0px;
         margin-bottom: 0px;
     }
+
+    #breadcrumb {
+        li {
+            button {
+                line-height: initial;
+            }
+        }
+    }
 }
