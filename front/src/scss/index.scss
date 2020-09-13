@@ -25,3 +25,10 @@ body {
   margin-left: 4rem;
   margin-right: 4rem;
 }
+
+@media(max-width: 575.98px) {
+  .margin-horizontal {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}

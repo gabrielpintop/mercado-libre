@@ -13,10 +13,10 @@ const SearchBar = ({ loading, loadProducts }) => {
         <header className="header">
             <nav className="row h-100 margin-horizontal">
                 <div className="col-lg-10 mx-auto row flex-align-center pl-0 pr-0" >
-                    <div className="col-1 pl-0 pr-0">
+                    <div className="col-lg-1 col-md-2 col-3 pl-0 pr-0">
                         <img id="headerLogo" src={mercadoLibreLogo} alt="Mercado Libre Header Logo" />
                     </div>
-                    <div className="col-11 pl-0 pr-0">
+                    <div className="col-lg-11 col-md-10 col-9 pl-0 pr-0">
                         <div id="searchBar">
                             <input id="searchBarInput" disabled={loading} name="searchedText" type="text" placeholder="Nunca dejes de buscar" value={searchedText} onChange={defineText} />
                             <button disabled={loading} style={{ backgroundImage: `url(${searchIcon})` }} onClick={() => loadProducts(searchedText)}></button>
