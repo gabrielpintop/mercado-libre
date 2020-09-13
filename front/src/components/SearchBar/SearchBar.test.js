@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import SearchBar from './SearchBar';
 
 describe('component - SearchBar', () => {
@@ -7,7 +7,7 @@ describe('component - SearchBar', () => {
     const loadProducts = jest.fn();
     let searchBar;
     beforeAll(() => {
-        searchBar = mount(<SearchBar loading={false} loadProducts={loadProducts} />);
+        searchBar = shallow(<SearchBar loading={false} loadProducts={loadProducts} />);
     });
 
     test('renders correctly', () => {
