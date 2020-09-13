@@ -1,0 +1,26 @@
+{
+  "name": "mercado-libre-back",
+  "version": "1.0.0",
+  "description": "Implementación del API de productos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielpintop/mercado-libre.git"
+  },
+  "author": "Gabriel Pinto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielpintop/mercado-libre/issues"
+  },
+  "homepage": "https://github.com/gabrielpintop/mercado-libre#readme",
+  "dependencies": {
+    "aws-serverless-express": "^3.3.8",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "morgan": "^1.10.0"
+  }
+}
