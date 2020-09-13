@@ -11,7 +11,7 @@ const SearchBar = ({ loading, loadProducts }) => {
 
     return (
         <header className="header">
-            <nav className="row h-100 margin-horizontal">
+            <div className="row h-100 margin-horizontal">
                 <div className="col-lg-10 mx-auto row flex-align-center pl-0 pr-0" >
                     <div className="col-lg-1 col-md-2 col-3 pl-0 pr-0">
                         <img id="headerLogo" src={mercadoLibreLogo} alt="Mercado Libre Header Logo" />
@@ -23,7 +23,7 @@ const SearchBar = ({ loading, loadProducts }) => {
                         </div>
                     </div>
                 </div>
-            </nav>
+            </div>
         </header>
     );
 };
