@@ -1,15 +1,17 @@
 import React from 'react';
-import mercadoLibreLogo from '../src/assets/logos/Logo_ML@2x.png';
-import './App.scss';
+import SearchBar from './components/SearchBar/SearchBar';
 
-function App() {
+const mockedLoadProducts = (result) => {
+  console.log(result);
+};
+
+const App = () => {
   return (
     <>
-      <header className="header">
-        <img id="headerLogo" src={mercadoLibreLogo} alt="Mercado Libre Header Logo" />
-      </header>
+      <SearchBar loadProducts={mockedLoadProducts}></SearchBar>
     </>
   );
 }
 
 export default App;
+
