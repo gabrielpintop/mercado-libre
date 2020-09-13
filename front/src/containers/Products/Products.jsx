@@ -6,6 +6,8 @@ const Products = ({ searched, handleChanges }) => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        console.log('here');
+
         if (searched) {
             handleChanges([], true);
             setLoading(true);
