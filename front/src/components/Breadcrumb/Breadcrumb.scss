@@ -1,0 +1,46 @@
+#breadcrumb {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    @media(max-width: 575.98px) {
+        padding: 16px 0px;
+    }
+
+    li {
+        display: inline;
+        font-size: 14px;
+        color: var(--color-info);
+
+        a {
+            cursor: pointer;
+            transition: color 0.1s ease;
+        }
+
+        a:hover {
+            color: darken(#999999, 12%);
+        }
+    }
+
+    li:last-child {
+        a {
+            font-weight: bold;
+        }
+    }
+
+    li+li:before {
+        padding: 8px;
+        content: '\203A';
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 575.98px) {
+    #breadcrumbNav {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
