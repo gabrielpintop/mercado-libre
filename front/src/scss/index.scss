@@ -1,10 +1,18 @@
-@import './variables.scss';
 @import 'node_modules/bootstrap/scss/functions';
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
 @import 'node_modules/bootstrap/scss/reboot';
 @import 'node_modules/bootstrap/scss/grid';
 @import 'node_modules/bootstrap/scss/utilities/spacing';
+@import './variables.scss';
+
+:root {
+  --color-primary: #{$primary};
+  --color-secondary: #{$secondary};
+  --color-info: #{$info};
+  --color-cool-blue: #{$cool-blue};
+  --color-background: #{$background};
+}
 
 body {
   font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
@@ -31,4 +39,12 @@ body {
     margin-left: 1rem;
     margin-right: 1rem;
   }
+}
+
+button {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+button:focus {
+  outline: 0;
 }
