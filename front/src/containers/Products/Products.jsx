@@ -13,6 +13,8 @@ const Products = ({ searched, handleChanges }) => {
             handleChanges([], true);
             setLoading(true);
             getProducts(searched).then(data => {
+                console.log(data);
+
                 setProducts(data.items);
                 handleChanges(data.categories, false);
                 setLoading(false);

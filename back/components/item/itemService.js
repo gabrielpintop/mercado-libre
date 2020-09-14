@@ -41,14 +41,14 @@ const getItems = async ({ q, offset = 8 }) => {
                     });
                 }
             }
-            if (result.available_filters) {
-                categoryFilter = result.available_filters.find(filter => filter.id === 'category');
-                if (categoryFilter && categoryFilter.values) {
-                    categoryFilter.values.forEach(value => {
-                        currentFilters.add(value.name);
-                    });
-                }
-            }
+            // if (result.available_filters) {
+            //     categoryFilter = result.available_filters.find(filter => filter.id === 'category');
+            //     if (categoryFilter && categoryFilter.values) {
+            //         categoryFilter.values.forEach(value => {
+            //             currentFilters.add(value.name);
+            //         });
+            //     }
+            // }
             currentFilters.forEach(value => {
                 response.categories.push(value);
             });
@@ -69,7 +69,15 @@ const getItems = async ({ q, offset = 8 }) => {
                     }
                 }
 
-                return { id, title, price: { price, currency: currency_id, decimals, }, picture: thumbnail, condition, free_shipping: shipping ? shipping.free_shipping : false };
+                let picture = thumbnail;
+                let fallbackPicture = '';
+                const imageIndex = thumbnail.indexOf('I.jpg')
+                if (imageIndex !== -1) {
+                    picture = thumbnail.substring(0, imageIndex) + 'E.jpg';
+                    fallbackPicture = thumbnail;
+                }
+
+                return { id, title, price: { amount: price, currency: currency_id, decimals, }, picture, fallbackPicture, condition, free_shipping: shipping ? shipping.free_shipping : false };
             });
 
             return { data: response };

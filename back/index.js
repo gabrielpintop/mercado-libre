@@ -1,13 +1,15 @@
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const cors = require('cors');
 const app = express();
-const { production, port } = require('./config');
+const { production, port, allowedOrigin } = require('./config');
 
 const requestHandler = require('./utilities/requestHandler');
 
 const itemApi = require('./components/item/itemAPI');
 
+app.use(cors({ origin: allowedOrigin }));
 app.use(helmet());
 app.use(morgan(production ? 'common' : 'dev'));
 app.use(express.json({ limit: '10mb' }));

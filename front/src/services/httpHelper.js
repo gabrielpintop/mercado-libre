@@ -29,4 +29,4 @@ const handleError = (err, reject) => {
     return reject('Se presentó un error realizando la petición');
 };
 
-module.exports = { getRequest };
+export { getRequest };

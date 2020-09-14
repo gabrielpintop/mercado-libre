@@ -4,12 +4,12 @@ import { formatNumber } from '../../../services/utilities';
 import freeShippingIcon from '../../../assets/icons/ic_shipping@2x.png';
 import { Link } from 'react-router-dom';
 
-const ProductListItem = ({ id, title, price: { currency, amount, decimals }, city, picture, condition, free_shipping }) => {
+const ProductListItem = ({ id, title, price: { currency, amount, decimals }, city, picture, condition, free_shipping, fallbackPicture }) => {
     return (
         <div className="product-container col-12 pl-0 pr-0 pt-small pb-small">
             <Link to={`/items/${id}`}>
                 <div className="product-image">
-                    <img src={picture} alt={title} />
+                    <img src={picture} alt={title} onError={(e) => { e.target.onerror = null; e.target.src = { fallbackPicture } }} />
                 </div>
             </Link>
             <div className="product-information mt-medium">

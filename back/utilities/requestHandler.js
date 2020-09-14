@@ -9,7 +9,7 @@ const requestHandler = ({ error, data, message, status }, req, res, next) => {
         }
         res.status(400).json({ errors });
     } else {
-        res.status(status || 200).json({ ...data, author: { name: 'Gabriel', lastName: 'Pinto' } });
+        res.status(status || 200).json({ data: { ...data, author: { name: 'Gabriel', lastName: 'Pinto' } } });
     }
 };
 

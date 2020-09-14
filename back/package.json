@@ -18,6 +18,7 @@
   "homepage": "https://github.com/gabrielpintop/mercado-libre#readme",
   "dependencies": {
     "aws-serverless-express": "^3.3.8",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.1.1",
