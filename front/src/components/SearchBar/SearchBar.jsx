@@ -28,8 +28,8 @@ const SearchBar = ({ loading, loadProducts, searched }) => {
                     </div>
                     <div className="col-lg-11 col-md-10 col-9 pl-0 pr-0">
                         <div id="searchBar">
-                            <input id="searchBarInput" disabled={loading} onKeyPress={handleKeyEnterPress} name="searchedText" type="text" placeholder="Nunca dejes de buscar" value={searchedText} onChange={defineText} />
-                            <button disabled={loading} style={{ backgroundImage: `url(${searchIcon})` }} onClick={() => loadProducts(searchedText)}></button>
+                            <input id="searchBarInput" aria-label="Campo de busquéda" disabled={loading} onKeyPress={handleKeyEnterPress} name="searchedText" type="text" placeholder="Nunca dejes de buscar" value={searchedText} onChange={defineText} />
+                            <button aria-label="Buscar" disabled={loading} style={{ backgroundImage: `url(${searchIcon})` }} onClick={() => loadProducts(searchedText)}></button>
                         </div>
                     </div>
                 </div>
