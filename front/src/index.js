@@ -14,6 +14,7 @@ const App = () => (
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <p id="gabrielPinto">Desarrollado por <a href="https://gabrielpinto.me" target="_blank" rel="noopener noreferrer">Gabriel Pinto</a></p>
   </React.StrictMode>,
   document.getElementById('root')
 );

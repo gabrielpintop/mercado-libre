@@ -98,3 +98,15 @@ button:focus {
     margin-right: 1rem;
   }
 }
+
+#gabrielPinto {
+  text-align: center;
+  color: var(--color-info);
+  margin-top: 16px;
+  margin-bottom: 32px;
+
+  a {
+    color: var(--color-info);
+    font-weight: bold;
+  }
+}

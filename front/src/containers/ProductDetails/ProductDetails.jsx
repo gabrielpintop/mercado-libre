@@ -34,7 +34,7 @@ const ProductDetails = ({ handleChanges }) => {
 
     return (
         loading ? <Loading /> : product ?
-            <div id="productDetails" className="main-content row no-gutters mb-medium pt-medium">
+            <div id="productDetails" className="main-content row no-gutters mb-small pt-medium">
                 <div className="col-md-8">
                     <div id="productDetailsImageContainer">
                         <img src={product.picture} alt={product.title} />
