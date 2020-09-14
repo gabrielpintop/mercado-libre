@@ -2,11 +2,11 @@ language: node_js
 node_js:
   - '12'
 before_install:
-    - cd front
+    - npm i -g claudia && cd back && npm i && AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY claudia update && cd ../front
 script:
   - npm test
   - npm run build
-before_deploy: pip install --user awscli && AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 rm s3://$BUCKET --recursive --region=$REGION
+before_deploy: pip install --user awscli && aws s3 rm s3://$BUCKET --recursive --region=$REGION
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY

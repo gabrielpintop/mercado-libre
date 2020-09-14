@@ -1,0 +1,10 @@
+{
+  "lambda": {
+    "role": "mercado-libre-back-executor",
+    "name": "mercado-libre-back",
+    "region": "us-east-1"
+  },
+  "api": {
+    "id": "q5dgc3osab"
+  }
+}

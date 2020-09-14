@@ -1,68 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Implementación
 
-## Available Scripts
+La aplicación se construyó utilizando `create-react-app`, una librería que entrega todo lo necesario para trabajar en un proyecto basado en React.js. Se utilizan estilos definidos SASS y también algunos componentes de bootstrap.
 
-In the project directory, you can run:
+Se utiliza Travis para manejar el despliegue automático de la aplicación en un bucket de S3 una vez los cambios se encuentren en la rama master y la ejecución de pruebas y el build se hayan realizado de forma exitosa.
 
-### `npm start`
+De igual forma, la aplicación cuenta con las configuraciones bases para ser una PWA. Pero en el dominio asociado no se cuenta con el certificado ssl necesario para la correcta instalación de la misma. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Despliegue
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+1) Instala Node JS en caso de que no lo tengas
+2) Instala las dependencias del proyecto usando el comando `npm i`
+3) Crear un archivo llamado `.env` en la raíz de la carpeta del back con los valores de las variables que quieres utilizar a partir del archivo `.env.example`
+4) Ejecuta la aplicación con el comando `npm run start`
 
-### `npm test`
+# Pruebas
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Se realizaron pruebas unitarias por cada componente/contenedor utilizando Jest y Enzyme. Para ejecutar las pruebas es necesario correr el comando `npm run test`
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
