@@ -48,7 +48,7 @@ const ProductDetails = ({ handleChanges }) => {
                 <div id="productsDetailsSeparator" className="col-12 mt-medium mb-medium">
                     {product.pictures.length > 0 &&
                         <div className="row" id="productDetailsImages">
-                            {product.pictures?.map((picture, index) => <div key={'IM' + index} className={'col-md-2 col-6 ' + (index === selectedPicture ? 'active' : '')}><img src={picture} alt={product.title + index} onClick={() => setSelectedPicture(index)} /></div>)}
+                            {product.pictures?.map((picture, index) => <div key={'IM' + index} className={'col-md-2 col-6 mb-2 mt-2 ' + (index === selectedPicture ? 'active' : '')}><img src={picture} alt={product.title + index} onClick={() => setSelectedPicture(index)} /></div>)}
                         </div>
                     }
                 </div>
