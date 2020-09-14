@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Loading from './Loading';
 
-describe('component - SearchBar', () => {
+describe('component - Loading', () => {
     let loading;
     beforeAll(() => {
         loading = shallow(<Loading />);

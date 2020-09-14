@@ -1,0 +1,24 @@
+#paginationContainer {
+    button {
+        background-color: none;
+        border: 0px;
+        color: var(--color-info);
+        font-size: 16px;
+        border-radius: 4px;
+        transition: background-color 0.4s ease;
+        padding: 9px 16px;
+
+        span {
+            font-size: 20px;
+            line-height: 20px;
+        }
+    }
+
+    button:hover {
+        background-color: darken(#EEEEEE, 10%);
+    }
+}
+
+#forwardButtonContainer {
+    text-align: right;
+}
