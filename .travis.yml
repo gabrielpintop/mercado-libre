@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - '12'
 before_install:
-    - npm i -g claudia && cd back && npm i && AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY PRODUCTION=true BASE_API_URL=$BASE_API_URL claudia update && cd ../front
+    - npm i -g claudia && cd back && npm i && AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY PRODUCTION=$PRODUCTION BASE_API_URL=$BASE_API_URL claudia update && cd ../front
 script:
   - npm test
   - npm run build
