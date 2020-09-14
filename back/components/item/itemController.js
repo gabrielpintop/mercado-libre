@@ -16,7 +16,16 @@ const GetItems = async (req, res, next) => {
     if (!q) {
         return next({ error: true, message: 'No se ingresaron paramétros de busquéda válidos' });
     }
-    const result = await ItemService.getItems({ q });
+
+    let offset = 0;
+    if (req.query.offset) {
+        let number = Number(req.query.offset);
+        if (typeof offset === 'number' && !isNaN(number)) {
+            offset = number;
+        }
+    }
+
+    const result = await ItemService.getItems({ q, offset });
     next(result);
 };
 
