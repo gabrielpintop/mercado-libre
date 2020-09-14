@@ -10,7 +10,7 @@ const ProductDetails = ({ handleChanges }) => {
     const { id } = useParams();
     const [loading, setLoading] = useState(true);
     const [product, setProduct] = useState(null);
-
+    const [selectedPicture, setSelectedPicture] = useState(0);
     useEffect(() => {
         handleChanges([], true);
         getProductById(id).then(data => {
@@ -31,13 +31,12 @@ const ProductDetails = ({ handleChanges }) => {
             return <p id="productDetailsPrice" className="mb-medium"><span>$ {formatNumber(product.price.amount)}</span><sup>00</sup></p>;
         }
     };
-
     return (
         loading ? <Loading /> : product ?
             <div id="productDetails" className="main-content row no-gutters mb-small pt-medium">
                 <div className="col-md-8">
                     <div id="productDetailsImageContainer">
-                        <img src={product.picture} alt={product.title} />
+                        <img src={product.pictures[selectedPicture]} alt={product.title} />
                     </div>
                 </div>
                 <div id="productDetailsInformation" className="col-md-4">
@@ -46,7 +45,13 @@ const ProductDetails = ({ handleChanges }) => {
                     {showPrice()}
                     <a href={product.permalink} target="_blank" rel="noopener noreferrer">Comprar</a>
                 </div>
-                <div id="productsDetailsSeparator" className="col-12 mt-medium mb-medium"></div>
+                <div id="productsDetailsSeparator" className="col-12 mt-medium mb-medium">
+                    {product.pictures.length > 0 &&
+                        <div className="row" id="productDetailsImages">
+                            {product.pictures?.map((picture, index) => <div key={'IM' + index} className={'col-md-2 col-6 ' + (index === selectedPicture ? 'active' : '')}><img src={picture} onClick={() => setSelectedPicture(index)} /></div>)}
+                        </div>
+                    }
+                </div>
                 <div id="productDetailsDescription" className="col-md-8">
                     <h3 className="mb-medium">Descripción del producto</h3>
                     <p className="mb-0">{product.description}</p>
