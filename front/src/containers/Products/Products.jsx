@@ -32,7 +32,7 @@ const Products = ({ searched, handleChanges }) => {
         return products.length === 0 ?
             <ProductsMessage message="searchedNotFound" />
             :
-            <div className="main-content row no-gutters mb-medium">
+            <div className="main-content row no-gutters mb-small">
                 {products.map(product => <ProductListItem key={product.id} {...product} />)}
             </div>;
     };
