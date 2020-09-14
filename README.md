@@ -2,6 +2,8 @@
 
 Visualizador de productos a partir del API de Mercado Libre con barra de búsqueda y vista detallada
 
+El proyecto se encuentra desplegado en este este enlace [http://mercado-libre.gabrielpinto.me/](http://mercado-libre.gabrielpinto.me/)
+
 # Estructura del proyecto
 
 - La carpeta `back` contiene el API que consume el visualizado. Se utiliza Node JS para su desarrollo.
