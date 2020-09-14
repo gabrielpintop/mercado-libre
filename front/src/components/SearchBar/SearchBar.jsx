@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './SearchBar.scss';
 import mercadoLibreLogo from '../../assets/logos/Logo_ML@2x.png';
 import searchIcon from '../../assets/icons/ic_Search@2x.png';
+import { Link } from 'react-router-dom';
 
 const SearchBar = ({ loading, loadProducts, searched }) => {
     const [searchedText, setSearchedText] = useState(searched);
@@ -23,7 +24,7 @@ const SearchBar = ({ loading, loadProducts, searched }) => {
             <div className="row h-100 margin-horizontal">
                 <div className="col-lg-10 mx-auto row flex-align-center pl-0 pr-0" >
                     <div className="col-lg-1 col-md-2 col-3 pl-0 pr-0">
-                        <img id="headerLogo" src={mercadoLibreLogo} alt="Mercado Libre Header Logo" />
+                        <Link to=""><img id="headerLogo" src={mercadoLibreLogo} alt="Mercado Libre Header Logo" /></Link>
                     </div>
                     <div className="col-lg-11 col-md-10 col-9 pl-0 pr-0">
                         <div id="searchBar">
